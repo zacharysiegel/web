@@ -1,4 +1,4 @@
-# Zachary Siegel's personal website
+# Personal website
 
 ## Deployment
 
