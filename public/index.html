@@ -5,16 +5,22 @@
         <title>Zachary Siegel</title>
         <link rel="icon" href="icon.svg">
         <style>
-    body {
-        font-family: monospace;
-        font-size: larger;
-    }
-    h1, h2, h3, h4, h5, h6 {
-        font-family: sans-serif;
-    }
-    div#content {
-        max-width: 1000px;
-    }
+body {
+    font-family: monospace;
+    font-size: larger;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-family: sans-serif;
+}
+div#content {
+    max-width: 1000px;
+}
+.code-block {
+    background-color: #f5f5f5;
+    padding: 16px;
+    border-radius: 4px;
+    font-family: monospace;
+}
         </style>
     </head>
     
@@ -30,39 +36,61 @@
                 <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/zcsiegel/">zcsiegel</a>
             </p>
 
-            <h3>Singularity</h3>
-            <p>
-                <i>A game of production and diplomacy</i>
-            </p>
-            <p>
-                I have recently begun work on a multiplayer, social RTS game. The game is designed to facilitate organic,
-                complex social interactions between players as each vies for supremacy over the others. Taking inspiration from
-                <a href="http://subterfuge-game.com/">Subterfuge</a>,
-                though the game occurs in "real time", the rate of time progression is slow enough to allow strategies and
-                alliances to develop over the course of days or weeks. Players may tactically engage opponents in violent
-                conflict, but they must also carefully develop resouces and chains. This element of the game utilizes
-                factory-building mechanics to allow players to specialize production to suit their specific geographic, social,
-                or military needs. Thus, the realms of military and economy are blurred, fortifying bonds between players and
-                intensifying every decision.
-            </p>
-            <p>
-                For those interested, the game is implemented using Rust for both the server and client. Due to the game's
-                genre, the primary target platforms are iOS and Android systems, though I expect to support PC clients as well.
-            </p>
-            <p>
-                Source code repository: <a href="https://github.com/zacharysiegel/singularity">zacharysiegel/singularity</a>
-            </p>
+            <div>
+                <h3>Singularity</h3>
+                <p>
+                    <i>A game of production and diplomacy</i>
+                </p>
+                <p>
+                    I have recently begun work on a multiplayer, social RTS game. The game is designed to facilitate organic,
+                    complex social interactions between players as each vies for supremacy over the others. Taking inspiration from
+                    <a href="http://subterfuge-game.com/">Subterfuge</a>,
+                    though the game occurs in "real time", the rate of time progression is slow enough to allow strategies and
+                    alliances to develop over the course of days or weeks. Players may tactically engage opponents in violent
+                    conflict, but they must also carefully develop resouces and chains. This element of the game utilizes
+                    factory-building mechanics to allow players to specialize production to suit their specific geographic, social,
+                    or military needs. Thus, the realms of military and economy are blurred, fortifying bonds between players and
+                    intensifying every decision.
+                </p>
+                <p>
+                    For those interested, the game is implemented using Rust for both the server and client. Due to the game's
+                    genre, the primary target platforms are iOS and Android systems, though I expect to support PC clients as well.
+                </p>
+                <p>
+                    Source code repository: <a href="https://github.com/zacharysiegel/singularity">zacharysiegel/singularity</a>
+                </p>
+            </div>
 
-            <h3>Bacter</h3>
-            <p>
-                Bacter is a multiplayer, arena combat web game I created in high school.<br/>
-                I have put in a small effort to revive the game's server at this subdomain:
-                <a target="_blank" rel="noopener noreferrer" href="https://bacter.zach.ro">bacter.zach.ro</a>.<br/>
-                This project is a special kind of garbage. I think it's fun, but don't expect it to perform well.
-            </p>
-            <p>
-                Source code repository: <a href="https://github.com/zacharysiegel/bacter">zacharysiegel/bacter</a>
-            </p>
+            <div>
+                <h3>Secr</h3>
+                <p>
+                    A minimal secret manager around structured ciphertext files. This tool enables me to very easily store all 
+                    secrets for a project within a single file, encrypted with a single master key. <em>Secr</em> provides 
+                    interfaces for humans via the command line or programs via a Rust library.
+                </p>
+                <div class="code-block">
+                    # Install via Cargo<br/>
+                    cargo install secr
+                </div>
+                <p>
+                    Source code repository: <a href="https://github.com/zacharysiegel/secr">zacharysiegel/secr</a>
+                    <br/>
+                    Published package: <a href="https://crates.io/crates/secr">crates.io/crates/secr</a>
+                </p>
+            </div>
+
+            <div>
+                <h3>Bacter</h3>
+                <p>
+                    Bacter is a multiplayer, arena combat web game I created in high school.<br/>
+                    I have put in a small effort to revive the game's server at this subdomain:
+                    <a target="_blank" rel="noopener noreferrer" href="https://bacter.zach.ro">bacter.zach.ro</a>.<br/>
+                    This project is a special kind of garbage. I think it's fun, but don't expect it to perform well.
+                </p>
+                <p>
+                    Source code repository: <a href="https://github.com/zacharysiegel/bacter">zacharysiegel/bacter</a>
+                </p>
+            </div>
     
             <footer style="
                 position: absolute;
@@ -77,3 +105,4 @@
     </body>
 
 </html>
+
