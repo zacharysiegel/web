@@ -2,6 +2,7 @@
 <html>
 
     <head>
+        <meta charset="utf-8">
         <title>Zachary Siegel</title>
         <link rel="icon" href="icon.svg">
         <style>
@@ -36,6 +37,42 @@ div#content {
                 LinkedIn:
                 <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/zcsiegel/">zcsiegel</a>
             </p>
+
+            <div>
+                <h3>Eafora</h3>
+                <p>
+                    <i>An interactive atlas of global fertility</i>
+                </p>
+                <p>
+                    A world map colored by fertility rate. Pick a statistic, drag the year anywhere back to 1891, click a
+                    country. You get its number, where it ranks, the full history, and every source that reports it.
+                </p>
+                <p>
+                    The name is Old English.
+                    <a target="_blank" rel="noopener noreferrer" href="https://bosworthtoller.com/008338"><i>ēafora</i></a>:
+                    son, descendant, heir.
+                </p>
+                <p>
+                    The interesting part is aggregation. No publisher covers every country and every year, and where two
+                    of them overlap they disagree. So Eafora takes several, including the World Bank's World Development
+                    Indicators and the Human Fertility Database, and picks per value by source priority. Best available
+                    number for each country and year, with the others listed right next to it.
+                </p>
+                <p>
+                    Everything is Rust: the pipeline that pulls the data in, the code that models it, and the web app
+                    itself, which compiles to WebAssembly and draws the map from scratch using GPU vector shaders. iOS
+                    and Android are planned on top of that same code.
+                </p>
+                <p>
+                    This project is a targeted learning exercise to perfect the design patterns involved in
+                    WebAssembly/Native multiplatform development using Rust and WebGPU.
+                </p>
+                <p>
+                    Live at: <a target="_blank" rel="noopener noreferrer" href="https://app.eafora.org">app.eafora.org</a>
+                    <br/>
+                    Source code repository: <a href="https://github.com/zacharysiegel/eafora">zacharysiegel/eafora</a>
+                </p>
+            </div>
 
             <div>
                 <h3>Singularity</h3>
