@@ -44,33 +44,33 @@ div#content {
                     <i>An interactive atlas of global fertility</i>
                 </p>
                 <p>
-                    A world map colored by fertility rate. Pick a statistic, drag the year anywhere back to 1891, click a
-                    country. You get its number, where it ranks, the full history, and every source that reports it.
+                  Eafora is a world map colored by various regional statistics. Users can observe regional variation in
+		  vital statistics over time, with multiple data sources aggregated into a single, high-quality medium for
+		  presentation.
                 </p>
                 <p>
-                    The name is Old English.
-                    <a target="_blank" rel="noopener noreferrer" href="https://bosworthtoller.com/008338"><i>ēafora</i></a>:
-                    son, descendant, heir.
+                  The name is transliterated from the Old English
+		  <a target="_blank" rel="noopener noreferrer" href="https://bosworthtoller.com/008338"><i>ēafora</i></a>,
+		  meaning son, descendant, or heir.
                 </p>
                 <p>
-                    The interesting part is aggregation. No publisher covers every country and every year, and where two
-                    of them overlap they disagree. So Eafora takes several, including the World Bank's World Development
-                    Indicators and the Human Fertility Database, and picks per value by source priority. Best available
-                    number for each country and year, with the others listed right next to it.
+		  The application is split into a generalized data aggregation layer which can incorporate data with different
+		  shapes from different sources. That data is re-presented through Eafora's own
+		  <a target="_blank" href="https://repository.eafora.org/latest/manifest.json">data repository</a>
+		  which powers the clients.
                 </p>
                 <p>
-                    Everything is Rust: the pipeline that pulls the data in, the code that models it, and the web app
-                    itself, which compiles to WebAssembly and draws the map from scratch using GPU vector shaders. iOS
-                    and Android are planned on top of that same code.
-                </p>
+                  Except for the iOS and Android UI chrome, the entire application is written in Rust. This includes the
+		  ingestion-to-publish pipeline, multiplatform GPU rendering, and the web application itself via WebAssembly.
+		</p>
                 <p>
-                    This project is a targeted learning exercise to perfect the design patterns involved in
-                    WebAssembly/Native multiplatform development using Rust and WebGPU.
+                  Beyond product goals, this project is a targeted learning exercise to ideate around and perfect the design
+		  patterns involved in WebAssembly/Native multiplatform development using Rust and GPU APIs.
                 </p>
                 <p>
                     Live at: <a target="_blank" rel="noopener noreferrer" href="https://app.eafora.org">app.eafora.org</a>
                     <br/>
-                    Source code repository: <a href="https://github.com/zacharysiegel/eafora">zacharysiegel/eafora</a>
+                    Source code repository: <a target="_blank" href="https://github.com/zacharysiegel/eafora">zacharysiegel/eafora</a>
                 </p>
             </div>
 
@@ -95,7 +95,7 @@ div#content {
                     genre, the primary target platforms are iOS and Android systems, though I expect to support PC clients as well.
                 </p>
                 <p>
-                    Source code repository: <a href="https://github.com/zacharysiegel/singularity">zacharysiegel/singularity</a>
+                    Source code repository: <a target="_blank" href="https://github.com/zacharysiegel/singularity">zacharysiegel/singularity</a>
                 </p>
             </div>
 
@@ -111,9 +111,9 @@ div#content {
                     cargo install secr
                 </div>
                 <p>
-                    Source code repository: <a href="https://github.com/zacharysiegel/secr">zacharysiegel/secr</a>
+                    Source code repository: <a target="_blank" href="https://github.com/zacharysiegel/secr">zacharysiegel/secr</a>
                     <br/>
-                    Published package: <a href="https://crates.io/crates/secr">crates.io/crates/secr</a>
+                    Published package: <a target="_blank" href="https://crates.io/crates/secr">crates.io/crates/secr</a>
                 </p>
             </div>
 
@@ -126,7 +126,7 @@ div#content {
                     This project is a special kind of garbage. I think it's fun, but don't expect it to perform well.
                 </p>
                 <p>
-                    Source code repository: <a href="https://github.com/zacharysiegel/bacter">zacharysiegel/bacter</a>
+                    Source code repository: <a target="_blank" href="https://github.com/zacharysiegel/bacter">zacharysiegel/bacter</a>
                 </p>
             </div>
     
