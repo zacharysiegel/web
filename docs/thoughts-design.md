@@ -1,4 +1,4 @@
-# Microblog panel
+# Thoughts panel
 
 A panel on `public/index.html` holding hand-picked copies of tweets from `@siegelzc`.
 
@@ -9,16 +9,16 @@ A panel on `public/index.html` holding hand-picked copies of tweets from `@siege
 - Source: `https://cdn.syndication.twimg.com/tweet-result?id=<tweet id>&token=a` returns text, UTC timestamp, quoted tweet, reply parent and image URLs.
 - A thread is one entry flattened into prose: `n/n` markers removed, sentences split across tweets rejoined, the author's paragraph breaks kept. The date links to the first tweet.
 - Displayed date: US Central. `datetime` attribute: the UTC timestamp.
-- Images are saved under `public/microblog/` as `<tweet-id>-<n>.<extension>`.
+- Images are saved under `public/thoughts/` as `<tweet-id>-<n>.<extension>`.
 
 ## Entry markup
 
 ```html
-<article class="microblog-entry">
-    <blockquote class="microblog-context"><a href="https://x.com/<handle>/status/<id>">@<handle></a>: quoted text</blockquote>
+<article class="thoughts-entry">
+    <blockquote class="thoughts-context"><a href="https://x.com/<handle>/status/<id>">@<handle></a>: quoted text</blockquote>
     <p>Text.</p>
-    <img src="microblog/<tweet-id>-1.jpg" alt="…" loading="lazy">
-    <a class="microblog-date" href="https://x.com/siegelzc/status/<tweet-id>"><time datetime="YYYY-MM-DDTHH:MM:SSZ">YYYY-MM-DD</time></a>
+    <img src="thoughts/<tweet-id>-1.jpg" alt="…" loading="lazy">
+    <a class="thoughts-date" href="https://x.com/siegelzc/status/<tweet-id>"><time datetime="YYYY-MM-DDTHH:MM:SSZ">YYYY-MM-DD</time></a>
 </article>
 ```
 
@@ -26,6 +26,6 @@ A panel on `public/index.html` holding hand-picked copies of tweets from `@siege
 
 ## Layout
 
-- Grid areas: `main` (projects), `aside#microblog`, `footer`.
+- Grid areas: `main` (projects), `aside#thoughts`, `footer`.
 - Wide viewports: `main` and `footer` in the left column, panel in the right column, `position: sticky` at the top with its own vertical scroll.
 - Narrow viewports: one column ordered `main`, panel, `footer`.

@@ -17,8 +17,8 @@ body {
     grid-template-columns: minmax(0, 1000px) minmax(280px, 400px);
     grid-template-rows: 1fr auto;
     grid-template-areas:
-        "content microblog"
-        "footer microblog";
+        "content thoughts"
+        "footer thoughts";
     column-gap: 3rem;
 }
 h1, h2, h3, h4, h5, h6 {
@@ -32,8 +32,8 @@ footer {
     align-self: end;
     padding-top: 4rem;
 }
-aside#microblog {
-    grid-area: microblog;
+aside#thoughts {
+    grid-area: thoughts;
     align-self: start;
     position: sticky;
     top: 8px;
@@ -47,37 +47,37 @@ aside#microblog {
         grid-template-rows: auto auto 1fr;
         grid-template-areas:
             "content"
-            "microblog"
+            "thoughts"
             "footer";
     }
-    aside#microblog {
+    aside#thoughts {
         position: static;
         max-height: none;
         overflow-y: visible;
     }
 }
-.microblog-entry {
+.thoughts-entry {
     border-top: 1px solid #ddd;
     padding: 12px 0;
 }
-.microblog-entry p,
-.microblog-entry ol {
+.thoughts-entry p,
+.thoughts-entry ol {
     margin: 0 0 8px;
 }
-.microblog-context {
+.thoughts-context {
     margin: 0 0 8px;
     padding-left: 12px;
     border-left: 3px solid #ddd;
     color: #555;
 }
-.microblog-entry img {
+.thoughts-entry img {
     display: block;
     max-width: 100%;
     height: auto;
     margin-bottom: 8px;
     border-radius: 4px;
 }
-.microblog-date {
+.thoughts-date {
     font-size: smaller;
 }
 footer p:last-child {
@@ -217,13 +217,13 @@ footer p:last-child {
             </div>
         </main>
 
-        <aside id="microblog">
-            <h3>Microblog</h3>
+        <aside id="thoughts">
+            <h3>Thoughts</h3>
             <p>
                 <i>Selected posts from <a target="_blank" rel="noopener noreferrer" href="https://x.com/siegelzc">@siegelzc</a></i>
             </p>
 
-            <article class="microblog-entry">
+            <article class="thoughts-entry">
                 <p>
                     It's fascinating to watch LLM agents spreading from software engineering into mathematics. Thousands of
                     respected professionals who were celebrating automation of one field are now very concerned about how it will
@@ -247,45 +247,45 @@ footer p:last-child {
                         human-oriented methodologies which may not be the only valid means to the same ends.
                     </li>
                 </ol>
-                <a class="microblog-date" target="_blank" rel="noopener noreferrer" href="https://x.com/siegelzc/status/2124967008622031335"><time datetime="2026-11-23T20:43:09Z">2026-11-23</time></a>
+                <a class="thoughts-date" target="_blank" rel="noopener noreferrer" href="https://x.com/siegelzc/status/2124967008622031335"><time datetime="2026-11-23T20:43:09Z">2026-11-23</time></a>
             </article>
 
-            <article class="microblog-entry">
-                <blockquote class="microblog-context">
+            <article class="thoughts-entry">
+                <blockquote class="thoughts-context">
                     <a target="_blank" rel="noopener noreferrer" href="https://x.com/schteppe/status/2118416632938918114">@schteppe</a>:
                     Hash function failed, and returned a sentinel value “*” to indicate error. Which wasn’t checked for.
                     <br/><br/>
                     A Result type would’ve prevented this.
                 </blockquote>
                 <p>This is the actual reason why you should use Rust, not memory safety or whatever.</p>
-                <a class="microblog-date" target="_blank" rel="noopener noreferrer" href="https://x.com/siegelzc/status/2118538781586583950"><time datetime="2026-11-06T02:59:40Z">2026-11-05</time></a>
+                <a class="thoughts-date" target="_blank" rel="noopener noreferrer" href="https://x.com/siegelzc/status/2118538781586583950"><time datetime="2026-11-06T02:59:40Z">2026-11-05</time></a>
             </article>
 
-            <article class="microblog-entry">
+            <article class="thoughts-entry">
                 <p>
                     Decision-making procedures are the new bottleneck for any post-AI software firm. To move faster than your
                     competitors, your firm needs to adapt its structure for decentralized authority. Organizational friction is no
                     longer marginal relative to implementation time.
                 </p>
-                <a class="microblog-date" target="_blank" rel="noopener noreferrer" href="https://x.com/siegelzc/status/2117327236538024287"><time datetime="2026-11-02T18:45:25Z">2026-11-02</time></a>
+                <a class="thoughts-date" target="_blank" rel="noopener noreferrer" href="https://x.com/siegelzc/status/2117327236538024287"><time datetime="2026-11-02T18:45:25Z">2026-11-02</time></a>
             </article>
 
-            <article class="microblog-entry">
+            <article class="thoughts-entry">
                 <p>
                     Pagination is not something users want to think about. It is a technical limitation which damages UX everywhere
                     it is used. Why in &lt;current year&gt; do applications still set a 10-item page size default? Set it to 1000
                     and load them in 10-item chunks if your app really is that slow.
                 </p>
-                <a class="microblog-date" target="_blank" rel="noopener noreferrer" href="https://x.com/siegelzc/status/2115136192102478317"><time datetime="2026-10-27T17:39:00Z">2026-10-27</time></a>
+                <a class="thoughts-date" target="_blank" rel="noopener noreferrer" href="https://x.com/siegelzc/status/2115136192102478317"><time datetime="2026-10-27T17:39:00Z">2026-10-27</time></a>
             </article>
 
-            <article class="microblog-entry">
+            <article class="thoughts-entry">
                 <p>
                     Your GUI shouldn't load a chat interface upon startup. This places a burden onto the user to imagine for
                     themselves what they might want to do with your tool. The vast majority of users need (and want) to be
                     presented with options. Users aren't the experts here; you are!
                 </p>
-                <a class="microblog-date" target="_blank" rel="noopener noreferrer" href="https://x.com/siegelzc/status/2106084112649830581"><time datetime="2026-10-02T18:09:16Z">2026-10-02</time></a>
+                <a class="thoughts-date" target="_blank" rel="noopener noreferrer" href="https://x.com/siegelzc/status/2106084112649830581"><time datetime="2026-10-02T18:09:16Z">2026-10-02</time></a>
             </article>
         </aside>
 
