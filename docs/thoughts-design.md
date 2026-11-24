@@ -26,6 +26,6 @@ A panel on `public/index.html` holding hand-picked copies of tweets from `@siege
 
 ## Layout
 
-- Grid areas: `main` (projects), `aside#thoughts`, `footer`.
+- Grid areas: `header` (name and position, full width), `main` (projects), `aside#thoughts`, `footer`.
 - Wide viewports: `main` and `footer` in the left column, panel in the right column, `position: sticky` at the top with its own vertical scroll.
-- Narrow viewports: one column ordered `main`, panel, `footer`.
+- Narrow viewports: one column ordered `header`, `main`, panel, `footer`.

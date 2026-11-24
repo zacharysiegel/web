@@ -15,14 +15,21 @@ body {
     box-sizing: border-box;
     display: grid;
     grid-template-columns: minmax(0, 1000px) minmax(280px, 400px);
-    grid-template-rows: 1fr auto;
+    grid-template-rows: auto 1fr auto;
     grid-template-areas:
+        "header header"
         "content thoughts"
         "footer thoughts";
     column-gap: 3rem;
 }
 h1, h2, h3, h4, h5, h6 {
     font-family: sans-serif;
+}
+header {
+    grid-area: header;
+}
+header p:last-child {
+    margin-bottom: 0;
 }
 main#content {
     grid-area: content;
@@ -44,8 +51,9 @@ aside#thoughts {
 @media (max-width: 900px) {
     body {
         grid-template-columns: minmax(0, 1fr);
-        grid-template-rows: auto auto 1fr;
+        grid-template-rows: auto auto auto 1fr;
         grid-template-areas:
+            "header"
             "content"
             "thoughts"
             "footer";
@@ -93,9 +101,12 @@ footer p:last-child {
     </head>
     
     <body>
-        <main id="content">
+        <header>
             <h1>Zachary Siegel</h1>
             <p>Software Engineer @ Apple</p>
+        </header>
+
+        <main id="content">
             <h3>Profiles</h3>
             <p>
                 GitHub:
