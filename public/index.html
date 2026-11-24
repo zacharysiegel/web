@@ -13,21 +13,80 @@ body {
     margin: 0;
     padding: 8px;
     box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: minmax(0, 1000px) minmax(280px, 400px);
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas:
+        "header header"
+        "content thoughts"
+        "footer thoughts";
+    column-gap: 3rem;
 }
 h1, h2, h3, h4, h5, h6 {
     font-family: sans-serif;
 }
-div#content {
-    max-width: 1000px;
-    flex: 1;
-    display: flex;
-    flex-direction: column;
+header {
+    grid-area: header;
+}
+header p:last-child {
+    margin-bottom: 0;
+}
+main#content {
+    grid-area: content;
 }
 footer {
-    margin-top: auto;
+    grid-area: footer;
+    align-self: end;
     padding-top: 4rem;
+}
+aside#thoughts {
+    grid-area: thoughts;
+    align-self: start;
+    position: sticky;
+    top: 8px;
+    max-height: calc(100vh - 16px);
+    overflow-y: auto;
+    font-size: medium;
+}
+@media (max-width: 900px) {
+    body {
+        grid-template-columns: minmax(0, 1fr);
+        grid-template-rows: auto auto auto 1fr;
+        grid-template-areas:
+            "header"
+            "content"
+            "thoughts"
+            "footer";
+    }
+    aside#thoughts {
+        position: static;
+        max-height: none;
+        overflow-y: visible;
+    }
+}
+.thoughts-entry {
+    border-top: 1px solid #ddd;
+    padding: 12px 0;
+}
+.thoughts-entry p,
+.thoughts-entry ol {
+    margin: 0 0 8px;
+}
+.thoughts-context {
+    margin: 0 0 8px;
+    padding-left: 12px;
+    border-left: 3px solid #ddd;
+    color: #555;
+}
+.thoughts-entry img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 8px;
+    border-radius: 4px;
+}
+.thoughts-date {
+    font-size: smaller;
 }
 footer p:last-child {
     margin-bottom: 0;
@@ -42,9 +101,12 @@ footer p:last-child {
     </head>
     
     <body>
-        <div id="content">
+        <header>
             <h1>Zachary Siegel</h1>
             <p>Software Engineer @ Apple</p>
+        </header>
+
+        <main id="content">
             <h3>Profiles</h3>
             <p>
                 GitHub:
@@ -164,11 +226,83 @@ footer p:last-child {
                     Source code repository: <a target="_blank" href="https://github.com/zacharysiegel/bacter">zacharysiegel/bacter</a>
                 </p>
             </div>
-    
-            <footer>
-                <p>Email me at: <a href="mailto:hello@zach.ro">hello@zach.ro</a></p>
-            </footer>
-        </div>
+        </main>
+
+        <aside id="thoughts">
+            <h3>Thoughts</h3>
+            <p>
+                <i>Selected posts from <a target="_blank" rel="noopener noreferrer" href="https://x.com/siegelzc">x.com/siegelzc</a></i>
+            </p>
+
+            <article class="thoughts-entry">
+                <p>
+                    It's fascinating to watch LLM agents spreading from software engineering into mathematics. Thousands of
+                    respected professionals who were celebrating automation of one field are now very concerned about how it will
+                    come to affect their own. Of course these are intelligent men with reasonable concerns, but of course their
+                    concerns are being disregarded in the same fashion as those of software professionals of similar station.
+                </p>
+                <p>
+                    I don't say this to gloat but rather to share the observation that everyone of course understands their own
+                    field deeper than outsiders ever will. An outsider may have some understanding of your field, but his
+                    understanding is mediated by the language interface used to communicate ideas to him. He requires an insider to
+                    encode his deep, conceptual, abstract understanding into human language.
+                </p>
+                <p>There are two key results which come out of this:</p>
+                <ol>
+                    <li>
+                        Outsiders will tend to overestimate the expertise of language models because they cannot peer beneath the
+                        abstraction barrier.
+                    </li>
+                    <li>
+                        Symmetrically, insiders will tend to underestimate language models due to their bias toward specific,
+                        human-oriented methodologies which may not be the only valid means to the same ends.
+                    </li>
+                </ol>
+                <a class="thoughts-date" target="_blank" rel="noopener noreferrer" href="https://x.com/siegelzc/status/2124967008622031335"><time datetime="2026-11-23T20:43:09Z">2026-11-23</time></a>
+            </article>
+
+            <article class="thoughts-entry">
+                <blockquote class="thoughts-context">
+                    <a target="_blank" rel="noopener noreferrer" href="https://x.com/schteppe/status/2118416632938918114">@schteppe</a>:
+                    Hash function failed, and returned a sentinel value “*” to indicate error. Which wasn’t checked for.
+                    <br/><br/>
+                    A Result type would’ve prevented this.
+                </blockquote>
+                <p>This is the actual reason why you should use Rust, not memory safety or whatever.</p>
+                <a class="thoughts-date" target="_blank" rel="noopener noreferrer" href="https://x.com/siegelzc/status/2118538781586583950"><time datetime="2026-11-06T02:59:40Z">2026-11-05</time></a>
+            </article>
+
+            <article class="thoughts-entry">
+                <p>
+                    Decision-making procedures are the new bottleneck for any post-AI software firm. To move faster than your
+                    competitors, your firm needs to adapt its structure for decentralized authority. Organizational friction is no
+                    longer marginal relative to implementation time.
+                </p>
+                <a class="thoughts-date" target="_blank" rel="noopener noreferrer" href="https://x.com/siegelzc/status/2117327236538024287"><time datetime="2026-11-02T18:45:25Z">2026-11-02</time></a>
+            </article>
+
+            <article class="thoughts-entry">
+                <p>
+                    Pagination is not something users want to think about. It is a technical limitation which damages UX everywhere
+                    it is used. Why in &lt;current year&gt; do applications still set a 10-item page size default? Set it to 1000
+                    and load them in 10-item chunks if your app really is that slow.
+                </p>
+                <a class="thoughts-date" target="_blank" rel="noopener noreferrer" href="https://x.com/siegelzc/status/2115136192102478317"><time datetime="2026-10-27T17:39:00Z">2026-10-27</time></a>
+            </article>
+
+            <article class="thoughts-entry">
+                <p>
+                    Your GUI shouldn't load a chat interface upon startup. This places a burden onto the user to imagine for
+                    themselves what they might want to do with your tool. The vast majority of users need (and want) to be
+                    presented with options. Users aren't the experts here; you are!
+                </p>
+                <a class="thoughts-date" target="_blank" rel="noopener noreferrer" href="https://x.com/siegelzc/status/2106084112649830581"><time datetime="2026-10-02T18:09:16Z">2026-10-02</time></a>
+            </article>
+        </aside>
+
+        <footer>
+            <p>Email me at: <a href="mailto:hello@zach.ro">hello@zach.ro</a></p>
+        </footer>
     </body>
 
 </html>
