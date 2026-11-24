@@ -13,21 +13,71 @@ body {
     margin: 0;
     padding: 8px;
     box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: minmax(0, 1000px) minmax(280px, 400px);
+    grid-template-rows: 1fr auto;
+    grid-template-areas:
+        "content microblog"
+        "footer microblog";
+    column-gap: 3rem;
 }
 h1, h2, h3, h4, h5, h6 {
     font-family: sans-serif;
 }
-div#content {
-    max-width: 1000px;
-    flex: 1;
-    display: flex;
-    flex-direction: column;
+main#content {
+    grid-area: content;
 }
 footer {
-    margin-top: auto;
+    grid-area: footer;
+    align-self: end;
     padding-top: 4rem;
+}
+aside#microblog {
+    grid-area: microblog;
+    align-self: start;
+    position: sticky;
+    top: 8px;
+    max-height: calc(100vh - 16px);
+    overflow-y: auto;
+    font-size: medium;
+}
+@media (max-width: 900px) {
+    body {
+        grid-template-columns: minmax(0, 1fr);
+        grid-template-rows: auto auto 1fr;
+        grid-template-areas:
+            "content"
+            "microblog"
+            "footer";
+    }
+    aside#microblog {
+        position: static;
+        max-height: none;
+        overflow-y: visible;
+    }
+}
+.microblog-entry {
+    border-top: 1px solid #ddd;
+    padding: 12px 0;
+}
+.microblog-entry p {
+    margin: 0 0 8px;
+}
+.microblog-context {
+    margin: 0 0 8px;
+    padding-left: 12px;
+    border-left: 3px solid #ddd;
+    color: #555;
+}
+.microblog-entry img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 8px;
+    border-radius: 4px;
+}
+.microblog-date {
+    font-size: smaller;
 }
 footer p:last-child {
     margin-bottom: 0;
@@ -42,7 +92,7 @@ footer p:last-child {
     </head>
     
     <body>
-        <div id="content">
+        <main id="content">
             <h1>Zachary Siegel</h1>
             <p>Software Engineer @ Apple</p>
             <h3>Profiles</h3>
@@ -164,11 +214,18 @@ footer p:last-child {
                     Source code repository: <a target="_blank" href="https://github.com/zacharysiegel/bacter">zacharysiegel/bacter</a>
                 </p>
             </div>
-    
-            <footer>
-                <p>Email me at: <a href="mailto:hello@zach.ro">hello@zach.ro</a></p>
-            </footer>
-        </div>
+        </main>
+
+        <aside id="microblog">
+            <h3>Microblog</h3>
+            <p>
+                <i>Selected posts from <a target="_blank" rel="noopener noreferrer" href="https://x.com/siegelzc">@siegelzc</a></i>
+            </p>
+        </aside>
+
+        <footer>
+            <p>Email me at: <a href="mailto:hello@zach.ro">hello@zach.ro</a></p>
+        </footer>
     </body>
 
 </html>
